@@ -23,6 +23,7 @@ defmodule DiscussWeb do
 
       import Plug.Conn
       import DiscussWeb.Gettext
+      import Ecto.Query
       alias DiscussWeb.Router.Helpers, as: Routes
     end
   end
@@ -99,6 +100,17 @@ defmodule DiscussWeb do
       import DiscussWeb.Gettext
       alias DiscussWeb.Router.Helpers, as: Routes
     end
+  end
+
+  def model do
+    quote do
+        use Ecto.Schema
+
+        import Ecto
+        import Ecto.Changeset
+        import Ecto.Query
+    end
+
   end
 
   @doc """
