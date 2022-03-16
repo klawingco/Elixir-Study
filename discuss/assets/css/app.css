@@ -118,3 +118,15 @@
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+
+
+.invalid-feedback{
+  color:red;
+  text-transform: capitalize;
+  margin-bottom: 0px;
+}
+
+.form-group{
+  position: relative;
+}
