@@ -7,6 +7,10 @@
                 <%= link to: Routes.topic_path(@conn, :edit, topic) do %>
                     Edit
                 <% end %>
+
+                <%= link to: Routes.topic_path(@conn, :delete, topic), method: :delete do %>
+                    Delete
+                <% end %>
             </div>
         </li>
     <%= end %>
