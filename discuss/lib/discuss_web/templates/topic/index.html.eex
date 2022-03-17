@@ -4,7 +4,7 @@
         <li class="collection-item">
             <%=  topic.title %>
             <div class="right">
-                <%= link to: Routes.topic_path(@conn, :edit, topic) do %>
+                <%= link  to: Routes.topic_path(@conn, :edit, topic) do %>
                     Edit
                 <% end %>
 

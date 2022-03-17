@@ -8,12 +8,6 @@ defmodule DiscussWeb.AuthController do
   alias Discuss.User
 
 
-  # def callback(conn, params) do
-  #   IO.puts("_+++++++")
-  #   IO.inspect(conn.assigns)
-  #   IO.inspect(params)
-  # end
-
   def callback(%{assigns: %{ueberauth_failure: _fails}} = conn, _params) do
     conn
     |> put_flash(:error, "Failed to authenticate.")
@@ -21,11 +15,6 @@ defmodule DiscussWeb.AuthController do
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, params) do
-
-    # IO.puts("_+++++++")
-    # IO.inspect(auth)
-    # IO.inspect(params)
-
     user_params = %{token: auth.credentials.token, email: auth.info.email, provider: "github"}
     changeset = User.changeset(%User{}, user_params)
 
