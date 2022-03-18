@@ -2,7 +2,9 @@
 <ul class="collection">
     <%=for topic <- @topics do %>
         <li class="collection-item">
-            <%=  topic.title %>
+            <%= link  to: Routes.topic_path(@conn, :show, topic) do %>
+                <%=topic.title %>
+            <% end %>
 
             <%= if @conn.assigns.user.id == topic.user_id do %>
                 <div class="right">

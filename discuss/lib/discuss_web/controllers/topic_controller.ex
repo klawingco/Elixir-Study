@@ -70,9 +70,14 @@ defmodule DiscussWeb.TopicController do
         conn
     else
         conn
-          |> put_plash(:error, "You cannot edit that")
+          |> put_flash(:error, "You cannot edit that")
           |> redirect(to: Routes.topic_path(conn, :index))
           |> halt()
     end
+  end
+
+  def show(conn, %{"id" => topic_id}) do
+    topic = Repo.get(Topic, topic_id)
+    render(conn, "show.html", topic: topic)
   end
 end
