@@ -4,7 +4,7 @@ defmodule Discuss.Repo.Migrations.AddComments do
   def change do
     create table(:comments) do
       add :content, :string
-      add :user, references(:users)
+      add :user_id, references(:users)
       add :topic_id, references(:topics)
 
       timestamps()
